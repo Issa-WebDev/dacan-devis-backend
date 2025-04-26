@@ -15,13 +15,7 @@ app.post("/api/quote", async (req, res) => {
   const { fullName, companyName, email, phone, description, selectedService } =
     req.body;
 
-  if (
-    !fullName ||
-    !email ||
-    !phone ||
-    !companyName ||
-    !selectedService
-  ) {
+  if (!fullName || !email || !phone || !companyName || !selectedService) {
     return res.status(400).json({ message: "Missing required fields" });
   }
 
